@@ -1,0 +1,123 @@
+2.  Synopsys Commands                                        Command Reference
+                              set_fp_macro_array
+
+NAME
+       set_fp_macro_array
+              Specifies an array of macro cells.
+
+SYNTAX
+       status set_fp_macro_array
+               -name string
+               [-elements collection_of_macro_cell_objects]
+               [-align_edge t | b | l | r | c | top | bottom | left | right | center]
+               [-align_pins {list of two pin objects}]
+               [-x_offset float]
+               [-y_offset float]
+               [-use_keepout_margin]
+               [-vertical]
+               [-rectilinear]
+               [-align_2d lb | lc | lt | rb | rc | rt | cb | cc | cr | left-bottom | left-center | left-top | right-bottom | right-center | right-top | center-bottom | center-center | center-top]
+               [-reset]
+
+ARGUMENTS
+       -name string
+              Specifies name for the macro array.
+
+       -elements collection_of_macro_cell_objects
+              Specifies  a  collection  or  list-of_collection  of macro cells
+              which will compose the macro array.  Each sublist  represents  a
+              row  in  the  array.  An  array starts from top most row.  A row
+              starts from left. For example, to describe the following array,
+
+              A11 A12 A13
+              A21 A22 A23
+              A31 A32 A33
+              specify this argument as shown below.
+              -elements [list [get_cells "A11 A12 A13"] \
+                              [get_cells "A21 A22 A23"] \
+                              [get_cells "A31 A32 A33"]]
+              This is a required argument when creating a macro array.  It  is
+              not  required  when  the -reset option is used to remove a macro
+              array.
+
+       -align_edge t | b | l | r | c | top | bottom | left | right | center
+              Specifies an edge for the macro cells in one row to align  with.
+              Default is to align to the centers.
+
+       -align_pins {list of two pin objects}
+              Specifies  list  of  pins to align two macro cells with pins. In
+              the list, the first pin is a pin on reference cell  (first  cell
+              in the array) and the second pin is a pin from second cell. This
+              option takes effect only if specified array has two macro cells.
+
+       -x_offset float
+              Specifies the distance between two adjacent edges of macro cells
+              on one row.  Unit is micron. The default value is 0, which means
+              the cells abut to each other.
+
+       -y_offset float
+              Specifies the distance between two adjacent edges of macro cells
+              on the same column of the next row.  Unit is micron. The default
+              value is 0, which means the cells abut to each other.
+
+       -use_keepout_margin
+              Instructs  the  tool  to use the keepout margin to determine the
+              spacing between two adjacent rows and/or columns of  the  array.
+              This option is mutually exclusive with the -x_offset and -y_off-
+              set options.
+
+       -vertical
+              Instructs the tool to arrange an array vertically. If  specified
+              for  an one-dimensional array, the tool arranges one dimensional
+              macros in a vertical column.  By default these arrays  are  cre-
+              ated  as  horizontal  rows.   If specified for a two-dimensional
+              array, the tool arranges the array in  column  based  structure,
+              instead  of  row based structure. It is like rotate a two dimen-
+              sional array 90 degrees counter-clock-wise.
+
+       -rectilinear
+              Specifies the overall rectilinear shape  of  a  two  dimensional
+              array.  For a rectilinear macro array, you can specify different
+              number of cells in different rows.  By default, in design  plan-
+              ning, a two-dimensional macro array is placed as a single object
+              that is rectangular in shape, and all the  rows(or  columns)  in
+              the array have the same number of cells.
+
+       -align_2d  lb  |  lc | lt | rb | rc | rt | cb | cc | cr | left-bottom |
+       left-center | left-top | right-bottom | right-center | right-top | cen-
+       ter-bottom | center-center | center-top
+              Specifies the edges for the macro cells in a row or column to be
+              aligned with, in a heterogeneous  two-dimensional  macro  array.
+              This  argument  is  optional.   By  default, the tool aligns the
+              cells in the same column by their  left  edge,  and  aligns  the
+              cells in the same row by their bottom edge.
+
+       -reset Removes  the  macro  array  constraint.  This option is mutually
+              exclusive with all other options except for -name.
+
+DESCRIPTION
+       The set_fp_macro_array command defines an array  of  macro  cells.  The
+       tool places macro cells in the array according to the parameters speci-
+       fied for the array.
+
+   Multicorner-Multimode Support
+       This command has no dependency on scenario-specific information.
+
+EXAMPLES
+       The following example shows how to specify a 2x2 array for cell A11 A12
+       A21 A22 with 10 microns space between rows and columns.
+
+         prompt>set_fp_macro_array -name AA \
+                       -elements [list [get_cells "A11 A12"] [get_cells "A21 A22"]] \
+                       -x_offset 10 -y_offset 10
+
+       The  following  example  shows how to remove a previously defined macro
+       array ICRAMARRAY1.
+         prompt>set_fp_macro_array -name ICRAMARRAY1 -reset
+
+SEE ALSO
+       create_fp_placement(2)
+       set_fp_macro_options(2)
+
+                          Version J-2014.09-SP5
+            Copyright (c) 2015 Synopsys, Inc. All rights reserved.

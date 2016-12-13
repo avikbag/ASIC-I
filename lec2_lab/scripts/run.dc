@@ -1,0 +1,65 @@
+# To set up the working directory and analyze 
+# to test the verilog files for lab2 
+
+define_design_lib WORK –path ./work
+analyze -f verilog [list dff.v s15850.v]
+
+# Starting with dff sample code for testing. 
+
+elaborate dff
+write -hier -f ddc -output dff.ddc
+link
+
+# Set the clock consraints
+
+create_clock clk -period 2
+set_clock_latency 0.4 clk
+set_clock_uncertainty 0.05 clk 
+set_clock_transition 0.1 clk
+
+# Comile for optimization reports
+
+compile_ultra -gate_clock -no_autoungroup
+
+#Reports for different constraints 
+report_wire_load > logs/dff/wire.report
+report_design > logs/dff/op.report
+report_timing > logs/dff/timing.report
+report_power  > logs/dff/power.report 
+report_clock  > logs/dff/clk_def.report
+report_clock_timing -type transition -clock clk  > logs/dff/transition_clock.report
+report_clock_timing -type skew -clock clk  > logs/dff/skew_clock.report
+report_clock_timing -type latency -clock clk  > logs/dff/latency_clock.report
+
+# Now moving onto s15850 sample benchmark. 
+
+elaborate s15850
+link
+
+# Set the clock consraints
+
+create_clock CK -period 2
+set_clock_latency 0.4 CK
+set_clock_uncertainty 0.05 CK 
+set_clock_transition 0.1 CK
+
+# Comile for optimization reports
+
+compile_ultra -gate_clock -no_autoungroup
+write_sdc ./const/s15850.sdc
+
+#Reports for different constraints 
+report_wire_load > logs/s15850/wire.report
+report_design > logs/s15850/op.report
+report_timing > logs/s15850/timing.report
+report_power  > logs/s15850/power.report 
+report_clock  > logs/s15850/clk_def.report
+report_clock_timing -type transition -clock CK  > logs/s15850/transition_clock.report
+report_clock_timing -type skew -clock CK  > logs/s15850/skew_clock.report
+report_clock_timing -type latency -clock CK  > logs/s15850/latency_clock.report
+
+#write output
+write -hier -f ddc -output unmapped/s15850.ddc
+write -hier -f verilog -output unmapped/s15850.v
+
+quit

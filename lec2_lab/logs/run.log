@@ -1,0 +1,1205 @@
+Warning: DC is only available in Tcl and XG mode. The -tcl_mode and -xg_mode options are no longer required.
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version J-2014.09-SP5 for RHEL64 -- Apr 22, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+# To set up the working directory and analyze 
+# to test the verilog files for lab2 
+define_design_lib WORK –path ./work
+Error: extra positional option '–path' (CMD-012)
+Error: extra positional option './work' (CMD-012)
+Error: Required argument '-path' was not found (CMD-007)
+analyze -f verilog [list dff.v s15850.v]
+Running PRESTO HDLC
+Searching for ./dff.v
+Searching for ./s15850.v
+Compiling source file ./dff.v
+Compiling source file ./s15850.v
+Presto compilation completed successfully.
+Loading db file '/mnt/class_data/ecec574-f2016/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db'
+Loading db file '/opt/synopsys/J-2014.09-SP5/libraries/syn/dw_foundation.sldb'
+1
+# Starting with dff sample code for testing. 
+elaborate dff
+Loading db file '/opt/synopsys/J-2014.09-SP5/libraries/syn/gtech.db'
+Loading db file '/opt/synopsys/J-2014.09-SP5/libraries/syn/standard.sldb'
+  Loading link library 'saed90nm_typ'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine dff line 6 in file
+		'./dff.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        q_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'dff'.
+1
+link
+
+  Linking design 'dff'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  dff                         /home/DREXEL/ab3433/ecec474/lec2_lab/dff.db
+  saed90nm_typ (library)      /mnt/class_data/ecec574-f2016/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db
+  dw_foundation.sldb (library) /opt/synopsys/J-2014.09-SP5/libraries/syn/dw_foundation.sldb
+
+1
+# Set the clock consraints
+create_clock clk -period 2
+1
+set_clock_latency 0.4 clk
+1
+set_clock_uncertainty 0.05 clk 
+1
+set_clock_transition 0.1 clk
+1
+# Comile for optimization reports
+compile_ultra -gate_clock -no_autoungroup
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.5 |     *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.5 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Loaded alib file './alib-52/saed90nm_typ.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'dff'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Performing clock-gating on design dff. (PWR-730)
+
+Threshold voltage group cell usage:
+>> saed90cell 100.00%
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:02      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+
+Threshold voltage group cell usage:
+>> saed90cell 100.00%
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+
+Threshold voltage group cell usage:
+>> saed90cell 100.00%
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+    0:00:03      25.1      0.00       0.0       0.0                           130537.3594
+Loading db file '/mnt/class_data/ecec574-f2016/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#Reports for different constraints 
+report_wire_load > logs/dff/wire.report
+report_design > logs/dff/op.report
+report_timing > logs/dff/timing.report
+report_power  > logs/dff/power.report 
+report_clock  > logs/dff/clk_def.report
+report_clock_timing -type transition -clock clk  > logs/dff/transition_clock.report
+report_clock_timing -type skew -clock clk  > logs/dff/skew_clock.report
+report_clock_timing -type latency -clock clk  > logs/dff/latency_clock.report
+# Now moving onto s15850 sample benchmark. 
+elaborate s15850
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 's15850'.
+1
+link
+
+  Linking design 's15850'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /home/DREXEL/ab3433/ecec474/lec2_lab/s15850.db, etc
+  saed90nm_typ (library)      /mnt/class_data/ecec574-f2016/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db
+  dw_foundation.sldb (library)
+                              /opt/synopsys/J-2014.09-SP5/libraries/syn/dw_foundation.sldb
+
+1
+# Set the clock consraints
+create_clock CK -period 2
+1
+set_clock_latency 0.4 CK
+1
+set_clock_uncertainty 0.05 CK 
+1
+set_clock_transition 0.1 CK
+1
+# Comile for optimization reports
+compile_ultra -gate_clock -no_autoungroup
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 75 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib-52/saed90nm_typ.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 's15850'
+  Processing 'dff_0'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Skipping clock gating on design s15850, since there are no registers. (PWR-806)
+Information: Performing clock-gating on design dff_0. (PWR-730)
+Information: Performing clock-gating on design dff_8. (PWR-730)
+Information: Performing clock-gating on design dff_16. (PWR-730)
+Information: Performing clock-gating on design dff_24. (PWR-730)
+Information: Performing clock-gating on design dff_32. (PWR-730)
+Information: Performing clock-gating on design dff_40. (PWR-730)
+Information: Performing clock-gating on design dff_48. (PWR-730)
+Information: Performing clock-gating on design dff_56. (PWR-730)
+Information: Performing clock-gating on design dff_64. (PWR-730)
+Information: Performing clock-gating on design dff_72. (PWR-730)
+Information: Performing clock-gating on design dff_80. (PWR-730)
+Information: Performing clock-gating on design dff_88. (PWR-730)
+Information: Performing clock-gating on design dff_96. (PWR-730)
+Information: Performing clock-gating on design dff_104. (PWR-730)
+Information: Performing clock-gating on design dff_112. (PWR-730)
+Information: Performing clock-gating on design dff_120. (PWR-730)
+Information: Performing clock-gating on design dff_128. (PWR-730)
+Information: Performing clock-gating on design dff_136. (PWR-730)
+Information: Performing clock-gating on design dff_144. (PWR-730)
+Information: Performing clock-gating on design dff_152. (PWR-730)
+Information: Performing clock-gating on design dff_160. (PWR-730)
+Information: Performing clock-gating on design dff_168. (PWR-730)
+Information: Performing clock-gating on design dff_176. (PWR-730)
+Information: Performing clock-gating on design dff_184. (PWR-730)
+Information: Performing clock-gating on design dff_192. (PWR-730)
+Information: Performing clock-gating on design dff_200. (PWR-730)
+Information: Performing clock-gating on design dff_208. (PWR-730)
+Information: Performing clock-gating on design dff_216. (PWR-730)
+Information: Performing clock-gating on design dff_224. (PWR-730)
+Information: Performing clock-gating on design dff_232. (PWR-730)
+Information: Performing clock-gating on design dff_240. (PWR-730)
+Information: Performing clock-gating on design dff_248. (PWR-730)
+Information: Performing clock-gating on design dff_256. (PWR-730)
+Information: Performing clock-gating on design dff_264. (PWR-730)
+Information: Performing clock-gating on design dff_272. (PWR-730)
+Information: Performing clock-gating on design dff_280. (PWR-730)
+Information: Performing clock-gating on design dff_288. (PWR-730)
+Information: Performing clock-gating on design dff_296. (PWR-730)
+Information: Performing clock-gating on design dff_304. (PWR-730)
+Information: Performing clock-gating on design dff_312. (PWR-730)
+Information: Performing clock-gating on design dff_320. (PWR-730)
+Information: Performing clock-gating on design dff_328. (PWR-730)
+Information: Performing clock-gating on design dff_336. (PWR-730)
+Information: Performing clock-gating on design dff_344. (PWR-730)
+Information: Performing clock-gating on design dff_352. (PWR-730)
+Information: Performing clock-gating on design dff_360. (PWR-730)
+Information: Performing clock-gating on design dff_368. (PWR-730)
+Information: Performing clock-gating on design dff_376. (PWR-730)
+Information: Performing clock-gating on design dff_384. (PWR-730)
+Information: Performing clock-gating on design dff_392. (PWR-730)
+Information: Performing clock-gating on design dff_400. (PWR-730)
+Information: Performing clock-gating on design dff_408. (PWR-730)
+Information: Performing clock-gating on design dff_416. (PWR-730)
+Information: Performing clock-gating on design dff_424. (PWR-730)
+Information: Performing clock-gating on design dff_432. (PWR-730)
+Information: Performing clock-gating on design dff_440. (PWR-730)
+Information: Performing clock-gating on design dff_448. (PWR-730)
+Information: Performing clock-gating on design dff_456. (PWR-730)
+Information: Performing clock-gating on design dff_464. (PWR-730)
+Information: Performing clock-gating on design dff_472. (PWR-730)
+Information: Performing clock-gating on design dff_480. (PWR-730)
+Information: Performing clock-gating on design dff_488. (PWR-730)
+Information: Performing clock-gating on design dff_496. (PWR-730)
+Information: Performing clock-gating on design dff_504. (PWR-730)
+Information: Performing clock-gating on design dff_512. (PWR-730)
+Information: Performing clock-gating on design dff_520. (PWR-730)
+Information: Performing clock-gating on design dff_528. (PWR-730)
+Information: Performing clock-gating on design dff_1. (PWR-730)
+Information: Performing clock-gating on design dff_9. (PWR-730)
+Information: Performing clock-gating on design dff_17. (PWR-730)
+Information: Performing clock-gating on design dff_25. (PWR-730)
+Information: Performing clock-gating on design dff_33. (PWR-730)
+Information: Performing clock-gating on design dff_41. (PWR-730)
+Information: Performing clock-gating on design dff_49. (PWR-730)
+Information: Performing clock-gating on design dff_57. (PWR-730)
+Information: Performing clock-gating on design dff_65. (PWR-730)
+Information: Performing clock-gating on design dff_73. (PWR-730)
+Information: Performing clock-gating on design dff_81. (PWR-730)
+Information: Performing clock-gating on design dff_89. (PWR-730)
+Information: Performing clock-gating on design dff_97. (PWR-730)
+Information: Performing clock-gating on design dff_105. (PWR-730)
+Information: Performing clock-gating on design dff_113. (PWR-730)
+Information: Performing clock-gating on design dff_121. (PWR-730)
+Information: Performing clock-gating on design dff_129. (PWR-730)
+Information: Performing clock-gating on design dff_137. (PWR-730)
+Information: Performing clock-gating on design dff_145. (PWR-730)
+Information: Performing clock-gating on design dff_153. (PWR-730)
+Information: Performing clock-gating on design dff_161. (PWR-730)
+Information: Performing clock-gating on design dff_169. (PWR-730)
+Information: Performing clock-gating on design dff_177. (PWR-730)
+Information: Performing clock-gating on design dff_185. (PWR-730)
+Information: Performing clock-gating on design dff_193. (PWR-730)
+Information: Performing clock-gating on design dff_201. (PWR-730)
+Information: Performing clock-gating on design dff_209. (PWR-730)
+Information: Performing clock-gating on design dff_217. (PWR-730)
+Information: Performing clock-gating on design dff_225. (PWR-730)
+Information: Performing clock-gating on design dff_233. (PWR-730)
+Information: Performing clock-gating on design dff_241. (PWR-730)
+Information: Performing clock-gating on design dff_249. (PWR-730)
+Information: Performing clock-gating on design dff_257. (PWR-730)
+Information: Performing clock-gating on design dff_265. (PWR-730)
+Information: Performing clock-gating on design dff_273. (PWR-730)
+Information: Performing clock-gating on design dff_281. (PWR-730)
+Information: Performing clock-gating on design dff_289. (PWR-730)
+Information: Performing clock-gating on design dff_297. (PWR-730)
+Information: Performing clock-gating on design dff_305. (PWR-730)
+Information: Performing clock-gating on design dff_313. (PWR-730)
+Information: Performing clock-gating on design dff_321. (PWR-730)
+Information: Performing clock-gating on design dff_329. (PWR-730)
+Information: Performing clock-gating on design dff_337. (PWR-730)
+Information: Performing clock-gating on design dff_345. (PWR-730)
+Information: Performing clock-gating on design dff_353. (PWR-730)
+Information: Performing clock-gating on design dff_361. (PWR-730)
+Information: Performing clock-gating on design dff_369. (PWR-730)
+Information: Performing clock-gating on design dff_377. (PWR-730)
+Information: Performing clock-gating on design dff_385. (PWR-730)
+Information: Performing clock-gating on design dff_393. (PWR-730)
+Information: Performing clock-gating on design dff_401. (PWR-730)
+Information: Performing clock-gating on design dff_409. (PWR-730)
+Information: Performing clock-gating on design dff_417. (PWR-730)
+Information: Performing clock-gating on design dff_425. (PWR-730)
+Information: Performing clock-gating on design dff_433. (PWR-730)
+Information: Performing clock-gating on design dff_441. (PWR-730)
+Information: Performing clock-gating on design dff_449. (PWR-730)
+Information: Performing clock-gating on design dff_457. (PWR-730)
+Information: Performing clock-gating on design dff_465. (PWR-730)
+Information: Performing clock-gating on design dff_473. (PWR-730)
+Information: Performing clock-gating on design dff_481. (PWR-730)
+Information: Performing clock-gating on design dff_489. (PWR-730)
+Information: Performing clock-gating on design dff_497. (PWR-730)
+Information: Performing clock-gating on design dff_505. (PWR-730)
+Information: Performing clock-gating on design dff_513. (PWR-730)
+Information: Performing clock-gating on design dff_521. (PWR-730)
+Information: Performing clock-gating on design dff_529. (PWR-730)
+Information: Performing clock-gating on design dff_2. (PWR-730)
+Information: Performing clock-gating on design dff_10. (PWR-730)
+Information: Performing clock-gating on design dff_18. (PWR-730)
+Information: Performing clock-gating on design dff_26. (PWR-730)
+Information: Performing clock-gating on design dff_34. (PWR-730)
+Information: Performing clock-gating on design dff_42. (PWR-730)
+Information: Performing clock-gating on design dff_50. (PWR-730)
+Information: Performing clock-gating on design dff_58. (PWR-730)
+Information: Performing clock-gating on design dff_66. (PWR-730)
+Information: Performing clock-gating on design dff_74. (PWR-730)
+Information: Performing clock-gating on design dff_82. (PWR-730)
+Information: Performing clock-gating on design dff_90. (PWR-730)
+Information: Performing clock-gating on design dff_98. (PWR-730)
+Information: Performing clock-gating on design dff_106. (PWR-730)
+Information: Performing clock-gating on design dff_114. (PWR-730)
+Information: Performing clock-gating on design dff_122. (PWR-730)
+Information: Performing clock-gating on design dff_130. (PWR-730)
+Information: Performing clock-gating on design dff_138. (PWR-730)
+Information: Performing clock-gating on design dff_146. (PWR-730)
+Information: Performing clock-gating on design dff_154. (PWR-730)
+Information: Performing clock-gating on design dff_162. (PWR-730)
+Information: Performing clock-gating on design dff_170. (PWR-730)
+Information: Performing clock-gating on design dff_178. (PWR-730)
+Information: Performing clock-gating on design dff_186. (PWR-730)
+Information: Performing clock-gating on design dff_194. (PWR-730)
+Information: Performing clock-gating on design dff_202. (PWR-730)
+Information: Performing clock-gating on design dff_210. (PWR-730)
+Information: Performing clock-gating on design dff_218. (PWR-730)
+Information: Performing clock-gating on design dff_226. (PWR-730)
+Information: Performing clock-gating on design dff_234. (PWR-730)
+Information: Performing clock-gating on design dff_242. (PWR-730)
+Information: Performing clock-gating on design dff_250. (PWR-730)
+Information: Performing clock-gating on design dff_258. (PWR-730)
+Information: Performing clock-gating on design dff_266. (PWR-730)
+Information: Performing clock-gating on design dff_274. (PWR-730)
+Information: Performing clock-gating on design dff_282. (PWR-730)
+Information: Performing clock-gating on design dff_290. (PWR-730)
+Information: Performing clock-gating on design dff_298. (PWR-730)
+Information: Performing clock-gating on design dff_306. (PWR-730)
+Information: Performing clock-gating on design dff_314. (PWR-730)
+Information: Performing clock-gating on design dff_322. (PWR-730)
+Information: Performing clock-gating on design dff_330. (PWR-730)
+Information: Performing clock-gating on design dff_338. (PWR-730)
+Information: Performing clock-gating on design dff_346. (PWR-730)
+Information: Performing clock-gating on design dff_354. (PWR-730)
+Information: Performing clock-gating on design dff_362. (PWR-730)
+Information: Performing clock-gating on design dff_370. (PWR-730)
+Information: Performing clock-gating on design dff_378. (PWR-730)
+Information: Performing clock-gating on design dff_386. (PWR-730)
+Information: Performing clock-gating on design dff_394. (PWR-730)
+Information: Performing clock-gating on design dff_402. (PWR-730)
+Information: Performing clock-gating on design dff_410. (PWR-730)
+Information: Performing clock-gating on design dff_418. (PWR-730)
+Information: Performing clock-gating on design dff_426. (PWR-730)
+Information: Performing clock-gating on design dff_434. (PWR-730)
+Information: Performing clock-gating on design dff_442. (PWR-730)
+Information: Performing clock-gating on design dff_450. (PWR-730)
+Information: Performing clock-gating on design dff_458. (PWR-730)
+Information: Performing clock-gating on design dff_466. (PWR-730)
+Information: Performing clock-gating on design dff_474. (PWR-730)
+Information: Performing clock-gating on design dff_482. (PWR-730)
+Information: Performing clock-gating on design dff_490. (PWR-730)
+Information: Performing clock-gating on design dff_498. (PWR-730)
+Information: Performing clock-gating on design dff_506. (PWR-730)
+Information: Performing clock-gating on design dff_514. (PWR-730)
+Information: Performing clock-gating on design dff_522. (PWR-730)
+Information: Performing clock-gating on design dff_530. (PWR-730)
+Information: Performing clock-gating on design dff_3. (PWR-730)
+Information: Performing clock-gating on design dff_11. (PWR-730)
+Information: Performing clock-gating on design dff_19. (PWR-730)
+Information: Performing clock-gating on design dff_27. (PWR-730)
+Information: Performing clock-gating on design dff_35. (PWR-730)
+Information: Performing clock-gating on design dff_43. (PWR-730)
+Information: Performing clock-gating on design dff_51. (PWR-730)
+Information: Performing clock-gating on design dff_59. (PWR-730)
+Information: Performing clock-gating on design dff_67. (PWR-730)
+Information: Performing clock-gating on design dff_75. (PWR-730)
+Information: Performing clock-gating on design dff_83. (PWR-730)
+Information: Performing clock-gating on design dff_91. (PWR-730)
+Information: Performing clock-gating on design dff_99. (PWR-730)
+Information: Performing clock-gating on design dff_107. (PWR-730)
+Information: Performing clock-gating on design dff_115. (PWR-730)
+Information: Performing clock-gating on design dff_123. (PWR-730)
+Information: Performing clock-gating on design dff_131. (PWR-730)
+Information: Performing clock-gating on design dff_139. (PWR-730)
+Information: Performing clock-gating on design dff_147. (PWR-730)
+Information: Performing clock-gating on design dff_155. (PWR-730)
+Information: Performing clock-gating on design dff_163. (PWR-730)
+Information: Performing clock-gating on design dff_171. (PWR-730)
+Information: Performing clock-gating on design dff_179. (PWR-730)
+Information: Performing clock-gating on design dff_187. (PWR-730)
+Information: Performing clock-gating on design dff_195. (PWR-730)
+Information: Performing clock-gating on design dff_203. (PWR-730)
+Information: Performing clock-gating on design dff_211. (PWR-730)
+Information: Performing clock-gating on design dff_219. (PWR-730)
+Information: Performing clock-gating on design dff_227. (PWR-730)
+Information: Performing clock-gating on design dff_235. (PWR-730)
+Information: Performing clock-gating on design dff_243. (PWR-730)
+Information: Performing clock-gating on design dff_251. (PWR-730)
+Information: Performing clock-gating on design dff_259. (PWR-730)
+Information: Performing clock-gating on design dff_267. (PWR-730)
+Information: Performing clock-gating on design dff_275. (PWR-730)
+Information: Performing clock-gating on design dff_283. (PWR-730)
+Information: Performing clock-gating on design dff_291. (PWR-730)
+Information: Performing clock-gating on design dff_299. (PWR-730)
+Information: Performing clock-gating on design dff_307. (PWR-730)
+Information: Performing clock-gating on design dff_315. (PWR-730)
+Information: Performing clock-gating on design dff_323. (PWR-730)
+Information: Performing clock-gating on design dff_331. (PWR-730)
+Information: Performing clock-gating on design dff_339. (PWR-730)
+Information: Performing clock-gating on design dff_347. (PWR-730)
+Information: Performing clock-gating on design dff_355. (PWR-730)
+Information: Performing clock-gating on design dff_363. (PWR-730)
+Information: Performing clock-gating on design dff_371. (PWR-730)
+Information: Performing clock-gating on design dff_379. (PWR-730)
+Information: Performing clock-gating on design dff_387. (PWR-730)
+Information: Performing clock-gating on design dff_395. (PWR-730)
+Information: Performing clock-gating on design dff_403. (PWR-730)
+Information: Performing clock-gating on design dff_411. (PWR-730)
+Information: Performing clock-gating on design dff_419. (PWR-730)
+Information: Performing clock-gating on design dff_427. (PWR-730)
+Information: Performing clock-gating on design dff_435. (PWR-730)
+Information: Performing clock-gating on design dff_443. (PWR-730)
+Information: Performing clock-gating on design dff_451. (PWR-730)
+Information: Performing clock-gating on design dff_459. (PWR-730)
+Information: Performing clock-gating on design dff_467. (PWR-730)
+Information: Performing clock-gating on design dff_475. (PWR-730)
+Information: Performing clock-gating on design dff_483. (PWR-730)
+Information: Performing clock-gating on design dff_491. (PWR-730)
+Information: Performing clock-gating on design dff_499. (PWR-730)
+Information: Performing clock-gating on design dff_507. (PWR-730)
+Information: Performing clock-gating on design dff_515. (PWR-730)
+Information: Performing clock-gating on design dff_523. (PWR-730)
+Information: Performing clock-gating on design dff_531. (PWR-730)
+Information: Performing clock-gating on design dff_4. (PWR-730)
+Information: Performing clock-gating on design dff_12. (PWR-730)
+Information: Performing clock-gating on design dff_20. (PWR-730)
+Information: Performing clock-gating on design dff_28. (PWR-730)
+Information: Performing clock-gating on design dff_36. (PWR-730)
+Information: Performing clock-gating on design dff_44. (PWR-730)
+Information: Performing clock-gating on design dff_52. (PWR-730)
+Information: Performing clock-gating on design dff_60. (PWR-730)
+Information: Performing clock-gating on design dff_68. (PWR-730)
+Information: Performing clock-gating on design dff_76. (PWR-730)
+Information: Performing clock-gating on design dff_84. (PWR-730)
+Information: Performing clock-gating on design dff_92. (PWR-730)
+Information: Performing clock-gating on design dff_100. (PWR-730)
+Information: Performing clock-gating on design dff_108. (PWR-730)
+Information: Performing clock-gating on design dff_116. (PWR-730)
+Information: Performing clock-gating on design dff_124. (PWR-730)
+Information: Performing clock-gating on design dff_132. (PWR-730)
+Information: Performing clock-gating on design dff_140. (PWR-730)
+Information: Performing clock-gating on design dff_148. (PWR-730)
+Information: Performing clock-gating on design dff_156. (PWR-730)
+Information: Performing clock-gating on design dff_164. (PWR-730)
+Information: Performing clock-gating on design dff_172. (PWR-730)
+Information: Performing clock-gating on design dff_180. (PWR-730)
+Information: Performing clock-gating on design dff_188. (PWR-730)
+Information: Performing clock-gating on design dff_196. (PWR-730)
+Information: Performing clock-gating on design dff_204. (PWR-730)
+Information: Performing clock-gating on design dff_212. (PWR-730)
+Information: Performing clock-gating on design dff_220. (PWR-730)
+Information: Performing clock-gating on design dff_228. (PWR-730)
+Information: Performing clock-gating on design dff_236. (PWR-730)
+Information: Performing clock-gating on design dff_244. (PWR-730)
+Information: Performing clock-gating on design dff_252. (PWR-730)
+Information: Performing clock-gating on design dff_260. (PWR-730)
+Information: Performing clock-gating on design dff_268. (PWR-730)
+Information: Performing clock-gating on design dff_276. (PWR-730)
+Information: Performing clock-gating on design dff_284. (PWR-730)
+Information: Performing clock-gating on design dff_292. (PWR-730)
+Information: Performing clock-gating on design dff_300. (PWR-730)
+Information: Performing clock-gating on design dff_308. (PWR-730)
+Information: Performing clock-gating on design dff_316. (PWR-730)
+Information: Performing clock-gating on design dff_324. (PWR-730)
+Information: Performing clock-gating on design dff_332. (PWR-730)
+Information: Performing clock-gating on design dff_340. (PWR-730)
+Information: Performing clock-gating on design dff_348. (PWR-730)
+Information: Performing clock-gating on design dff_356. (PWR-730)
+Information: Performing clock-gating on design dff_364. (PWR-730)
+Information: Performing clock-gating on design dff_372. (PWR-730)
+Information: Performing clock-gating on design dff_380. (PWR-730)
+Information: Performing clock-gating on design dff_388. (PWR-730)
+Information: Performing clock-gating on design dff_396. (PWR-730)
+Information: Performing clock-gating on design dff_404. (PWR-730)
+Information: Performing clock-gating on design dff_412. (PWR-730)
+Information: Performing clock-gating on design dff_420. (PWR-730)
+Information: Performing clock-gating on design dff_428. (PWR-730)
+Information: Performing clock-gating on design dff_436. (PWR-730)
+Information: Performing clock-gating on design dff_444. (PWR-730)
+Information: Performing clock-gating on design dff_452. (PWR-730)
+Information: Performing clock-gating on design dff_460. (PWR-730)
+Information: Performing clock-gating on design dff_468. (PWR-730)
+Information: Performing clock-gating on design dff_476. (PWR-730)
+Information: Performing clock-gating on design dff_484. (PWR-730)
+Information: Performing clock-gating on design dff_492. (PWR-730)
+Information: Performing clock-gating on design dff_500. (PWR-730)
+Information: Performing clock-gating on design dff_508. (PWR-730)
+Information: Performing clock-gating on design dff_516. (PWR-730)
+Information: Performing clock-gating on design dff_524. (PWR-730)
+Information: Performing clock-gating on design dff_532. (PWR-730)
+Information: Performing clock-gating on design dff_5. (PWR-730)
+Information: Performing clock-gating on design dff_13. (PWR-730)
+Information: Performing clock-gating on design dff_21. (PWR-730)
+Information: Performing clock-gating on design dff_29. (PWR-730)
+Information: Performing clock-gating on design dff_37. (PWR-730)
+Information: Performing clock-gating on design dff_45. (PWR-730)
+Information: Performing clock-gating on design dff_53. (PWR-730)
+Information: Performing clock-gating on design dff_61. (PWR-730)
+Information: Performing clock-gating on design dff_69. (PWR-730)
+Information: Performing clock-gating on design dff_77. (PWR-730)
+Information: Performing clock-gating on design dff_85. (PWR-730)
+Information: Performing clock-gating on design dff_93. (PWR-730)
+Information: Performing clock-gating on design dff_101. (PWR-730)
+Information: Performing clock-gating on design dff_109. (PWR-730)
+Information: Performing clock-gating on design dff_117. (PWR-730)
+Information: Performing clock-gating on design dff_125. (PWR-730)
+Information: Performing clock-gating on design dff_133. (PWR-730)
+Information: Performing clock-gating on design dff_141. (PWR-730)
+Information: Performing clock-gating on design dff_149. (PWR-730)
+Information: Performing clock-gating on design dff_157. (PWR-730)
+Information: Performing clock-gating on design dff_165. (PWR-730)
+Information: Performing clock-gating on design dff_173. (PWR-730)
+Information: Performing clock-gating on design dff_181. (PWR-730)
+Information: Performing clock-gating on design dff_189. (PWR-730)
+Information: Performing clock-gating on design dff_197. (PWR-730)
+Information: Performing clock-gating on design dff_205. (PWR-730)
+Information: Performing clock-gating on design dff_213. (PWR-730)
+Information: Performing clock-gating on design dff_221. (PWR-730)
+Information: Performing clock-gating on design dff_229. (PWR-730)
+Information: Performing clock-gating on design dff_237. (PWR-730)
+Information: Performing clock-gating on design dff_245. (PWR-730)
+Information: Performing clock-gating on design dff_253. (PWR-730)
+Information: Performing clock-gating on design dff_261. (PWR-730)
+Information: Performing clock-gating on design dff_269. (PWR-730)
+Information: Performing clock-gating on design dff_277. (PWR-730)
+Information: Performing clock-gating on design dff_285. (PWR-730)
+Information: Performing clock-gating on design dff_293. (PWR-730)
+Information: Performing clock-gating on design dff_301. (PWR-730)
+Information: Performing clock-gating on design dff_309. (PWR-730)
+Information: Performing clock-gating on design dff_317. (PWR-730)
+Information: Performing clock-gating on design dff_325. (PWR-730)
+Information: Performing clock-gating on design dff_333. (PWR-730)
+Information: Performing clock-gating on design dff_341. (PWR-730)
+Information: Performing clock-gating on design dff_349. (PWR-730)
+Information: Performing clock-gating on design dff_357. (PWR-730)
+Information: Performing clock-gating on design dff_365. (PWR-730)
+Information: Performing clock-gating on design dff_373. (PWR-730)
+Information: Performing clock-gating on design dff_381. (PWR-730)
+Information: Performing clock-gating on design dff_389. (PWR-730)
+Information: Performing clock-gating on design dff_397. (PWR-730)
+Information: Performing clock-gating on design dff_405. (PWR-730)
+Information: Performing clock-gating on design dff_413. (PWR-730)
+Information: Performing clock-gating on design dff_421. (PWR-730)
+Information: Performing clock-gating on design dff_429. (PWR-730)
+Information: Performing clock-gating on design dff_437. (PWR-730)
+Information: Performing clock-gating on design dff_445. (PWR-730)
+Information: Performing clock-gating on design dff_453. (PWR-730)
+Information: Performing clock-gating on design dff_461. (PWR-730)
+Information: Performing clock-gating on design dff_469. (PWR-730)
+Information: Performing clock-gating on design dff_477. (PWR-730)
+Information: Performing clock-gating on design dff_485. (PWR-730)
+Information: Performing clock-gating on design dff_493. (PWR-730)
+Information: Performing clock-gating on design dff_501. (PWR-730)
+Information: Performing clock-gating on design dff_509. (PWR-730)
+Information: Performing clock-gating on design dff_517. (PWR-730)
+Information: Performing clock-gating on design dff_525. (PWR-730)
+Information: Performing clock-gating on design dff_533. (PWR-730)
+Information: Performing clock-gating on design dff_6. (PWR-730)
+Information: Performing clock-gating on design dff_14. (PWR-730)
+Information: Performing clock-gating on design dff_22. (PWR-730)
+Information: Performing clock-gating on design dff_30. (PWR-730)
+Information: Performing clock-gating on design dff_38. (PWR-730)
+Information: Performing clock-gating on design dff_46. (PWR-730)
+Information: Performing clock-gating on design dff_54. (PWR-730)
+Information: Performing clock-gating on design dff_62. (PWR-730)
+Information: Performing clock-gating on design dff_70. (PWR-730)
+Information: Performing clock-gating on design dff_78. (PWR-730)
+Information: Performing clock-gating on design dff_86. (PWR-730)
+Information: Performing clock-gating on design dff_94. (PWR-730)
+Information: Performing clock-gating on design dff_102. (PWR-730)
+Information: Performing clock-gating on design dff_110. (PWR-730)
+Information: Performing clock-gating on design dff_118. (PWR-730)
+Information: Performing clock-gating on design dff_126. (PWR-730)
+Information: Performing clock-gating on design dff_134. (PWR-730)
+Information: Performing clock-gating on design dff_142. (PWR-730)
+Information: Performing clock-gating on design dff_150. (PWR-730)
+Information: Performing clock-gating on design dff_158. (PWR-730)
+Information: Performing clock-gating on design dff_166. (PWR-730)
+Information: Performing clock-gating on design dff_174. (PWR-730)
+Information: Performing clock-gating on design dff_182. (PWR-730)
+Information: Performing clock-gating on design dff_190. (PWR-730)
+Information: Performing clock-gating on design dff_198. (PWR-730)
+Information: Performing clock-gating on design dff_206. (PWR-730)
+Information: Performing clock-gating on design dff_214. (PWR-730)
+Information: Performing clock-gating on design dff_222. (PWR-730)
+Information: Performing clock-gating on design dff_230. (PWR-730)
+Information: Performing clock-gating on design dff_238. (PWR-730)
+Information: Performing clock-gating on design dff_246. (PWR-730)
+Information: Performing clock-gating on design dff_254. (PWR-730)
+Information: Performing clock-gating on design dff_262. (PWR-730)
+Information: Performing clock-gating on design dff_270. (PWR-730)
+Information: Performing clock-gating on design dff_278. (PWR-730)
+Information: Performing clock-gating on design dff_286. (PWR-730)
+Information: Performing clock-gating on design dff_294. (PWR-730)
+Information: Performing clock-gating on design dff_302. (PWR-730)
+Information: Performing clock-gating on design dff_310. (PWR-730)
+Information: Performing clock-gating on design dff_318. (PWR-730)
+Information: Performing clock-gating on design dff_326. (PWR-730)
+Information: Performing clock-gating on design dff_334. (PWR-730)
+Information: Performing clock-gating on design dff_342. (PWR-730)
+Information: Performing clock-gating on design dff_350. (PWR-730)
+Information: Performing clock-gating on design dff_358. (PWR-730)
+Information: Performing clock-gating on design dff_366. (PWR-730)
+Information: Performing clock-gating on design dff_374. (PWR-730)
+Information: Performing clock-gating on design dff_382. (PWR-730)
+Information: Performing clock-gating on design dff_390. (PWR-730)
+Information: Performing clock-gating on design dff_398. (PWR-730)
+Information: Performing clock-gating on design dff_406. (PWR-730)
+Information: Performing clock-gating on design dff_414. (PWR-730)
+Information: Performing clock-gating on design dff_422. (PWR-730)
+Information: Performing clock-gating on design dff_430. (PWR-730)
+Information: Performing clock-gating on design dff_438. (PWR-730)
+Information: Performing clock-gating on design dff_446. (PWR-730)
+Information: Performing clock-gating on design dff_454. (PWR-730)
+Information: Performing clock-gating on design dff_462. (PWR-730)
+Information: Performing clock-gating on design dff_470. (PWR-730)
+Information: Performing clock-gating on design dff_478. (PWR-730)
+Information: Performing clock-gating on design dff_486. (PWR-730)
+Information: Performing clock-gating on design dff_494. (PWR-730)
+Information: Performing clock-gating on design dff_502. (PWR-730)
+Information: Performing clock-gating on design dff_510. (PWR-730)
+Information: Performing clock-gating on design dff_518. (PWR-730)
+Information: Performing clock-gating on design dff_526. (PWR-730)
+Information: Performing clock-gating on design dff_7. (PWR-730)
+Information: Performing clock-gating on design dff_15. (PWR-730)
+Information: Performing clock-gating on design dff_23. (PWR-730)
+Information: Performing clock-gating on design dff_31. (PWR-730)
+Information: Performing clock-gating on design dff_39. (PWR-730)
+Information: Performing clock-gating on design dff_47. (PWR-730)
+Information: Performing clock-gating on design dff_55. (PWR-730)
+Information: Performing clock-gating on design dff_63. (PWR-730)
+Information: Performing clock-gating on design dff_71. (PWR-730)
+Information: Performing clock-gating on design dff_79. (PWR-730)
+Information: Performing clock-gating on design dff_87. (PWR-730)
+Information: Performing clock-gating on design dff_95. (PWR-730)
+Information: Performing clock-gating on design dff_103. (PWR-730)
+Information: Performing clock-gating on design dff_111. (PWR-730)
+Information: Performing clock-gating on design dff_119. (PWR-730)
+Information: Performing clock-gating on design dff_127. (PWR-730)
+Information: Performing clock-gating on design dff_135. (PWR-730)
+Information: Performing clock-gating on design dff_143. (PWR-730)
+Information: Performing clock-gating on design dff_151. (PWR-730)
+Information: Performing clock-gating on design dff_159. (PWR-730)
+Information: Performing clock-gating on design dff_167. (PWR-730)
+Information: Performing clock-gating on design dff_175. (PWR-730)
+Information: Performing clock-gating on design dff_183. (PWR-730)
+Information: Performing clock-gating on design dff_191. (PWR-730)
+Information: Performing clock-gating on design dff_199. (PWR-730)
+Information: Performing clock-gating on design dff_207. (PWR-730)
+Information: Performing clock-gating on design dff_215. (PWR-730)
+Information: Performing clock-gating on design dff_223. (PWR-730)
+Information: Performing clock-gating on design dff_231. (PWR-730)
+Information: Performing clock-gating on design dff_239. (PWR-730)
+Information: Performing clock-gating on design dff_247. (PWR-730)
+Information: Performing clock-gating on design dff_255. (PWR-730)
+Information: Performing clock-gating on design dff_263. (PWR-730)
+Information: Performing clock-gating on design dff_271. (PWR-730)
+Information: Performing clock-gating on design dff_279. (PWR-730)
+Information: Performing clock-gating on design dff_287. (PWR-730)
+Information: Performing clock-gating on design dff_295. (PWR-730)
+Information: Performing clock-gating on design dff_303. (PWR-730)
+Information: Performing clock-gating on design dff_311. (PWR-730)
+Information: Performing clock-gating on design dff_319. (PWR-730)
+Information: Performing clock-gating on design dff_327. (PWR-730)
+Information: Performing clock-gating on design dff_335. (PWR-730)
+Information: Performing clock-gating on design dff_343. (PWR-730)
+Information: Performing clock-gating on design dff_351. (PWR-730)
+Information: Performing clock-gating on design dff_359. (PWR-730)
+Information: Performing clock-gating on design dff_367. (PWR-730)
+Information: Performing clock-gating on design dff_375. (PWR-730)
+Information: Performing clock-gating on design dff_383. (PWR-730)
+Information: Performing clock-gating on design dff_391. (PWR-730)
+Information: Performing clock-gating on design dff_399. (PWR-730)
+Information: Performing clock-gating on design dff_407. (PWR-730)
+Information: Performing clock-gating on design dff_415. (PWR-730)
+Information: Performing clock-gating on design dff_423. (PWR-730)
+Information: Performing clock-gating on design dff_431. (PWR-730)
+Information: Performing clock-gating on design dff_439. (PWR-730)
+Information: Performing clock-gating on design dff_447. (PWR-730)
+Information: Performing clock-gating on design dff_455. (PWR-730)
+Information: Performing clock-gating on design dff_463. (PWR-730)
+Information: Performing clock-gating on design dff_471. (PWR-730)
+Information: Performing clock-gating on design dff_479. (PWR-730)
+Information: Performing clock-gating on design dff_487. (PWR-730)
+Information: Performing clock-gating on design dff_495. (PWR-730)
+Information: Performing clock-gating on design dff_503. (PWR-730)
+Information: Performing clock-gating on design dff_511. (PWR-730)
+Information: Performing clock-gating on design dff_519. (PWR-730)
+Information: Performing clock-gating on design dff_527. (PWR-730)
+Information: Removing unused design 'dff_526'. (OPT-1055)
+Information: Removing unused design 'dff_499'. (OPT-1055)
+Information: Removing unused design 'dff_494'. (OPT-1055)
+Information: Removing unused design 'dff_427'. (OPT-1055)
+Information: Removing unused design 'dff_424'. (OPT-1055)
+Information: Removing unused design 'dff_390'. (OPT-1055)
+Information: Removing unused design 'dff_374'. (OPT-1055)
+Information: Removing unused design 'dff_315'. (OPT-1055)
+Information: Removing unused design 'dff_298'. (OPT-1055)
+Information: Removing unused design 'dff_260'. (OPT-1055)
+Information: Removing unused design 'dff_236'. (OPT-1055)
+Information: Removing unused design 'dff_229'. (OPT-1055)
+Information: Removing unused design 'dff_193'. (OPT-1055)
+Information: Removing unused design 'dff_186'. (OPT-1055)
+Information: Removing unused design 'dff_159'. (OPT-1055)
+Information: Removing unused design 'dff_112'. (OPT-1055)
+Information: Removing unused design 'dff_95'. (OPT-1055)
+Information: Removing unused design 'dff_7'. (OPT-1055)
+Information: Complementing port 'q' in design 'dff_441'.
+	 The new name of the port is 'q_BAR'. (OPT-319)
+Information: Complementing port 'q' in design 'dff_413'.
+	 The new name of the port is 'q_BAR'. (OPT-319)
+Information: Complementing port 'q' in design 'dff_340'.
+	 The new name of the port is 'q_BAR'. (OPT-319)
+Information: Complementing port 'q' in design 'dff_301'.
+	 The new name of the port is 'q_BAR'. (OPT-319)
+Information: Complementing port 'q' in design 'dff_269'.
+	 The new name of the port is 'q_BAR'. (OPT-319)
+Information: The register 'DFF_469/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_257/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_496/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_479/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_533/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_213/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_287/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_84/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_0/q_reg' is a constant and will be removed. (OPT-1206)
+Information: Removing unused design 'dff_0'. (OPT-1055)
+Information: Removing unused design 'dff_450'. (OPT-1055)
+Information: Removing unused design 'dff_321'. (OPT-1055)
+Information: Removing unused design 'dff_277'. (OPT-1055)
+Information: Removing unused design 'dff_247'. (OPT-1055)
+Information: Removing unused design 'dff_65'. (OPT-1055)
+Information: Removing unused design 'dff_55'. (OPT-1055)
+Information: Removing unused design 'dff_38'. (OPT-1055)
+Information: Removing unused design 'dff_1'. (OPT-1055)
+
+Threshold voltage group cell usage:
+>> saed90cell 100.00%
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+Information: The register 'DFF_525/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_517/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_468/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_457/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_438/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_416/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_399/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_383/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_366/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_353/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_472/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_421/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_507/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_323/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_241/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_240/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_232/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_214/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_224/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_513/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_363/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_145/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_278/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_158/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_417/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_91/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_63/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_49/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_31/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_74/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_435/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_23/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_21/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_25/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_501/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_131/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_272/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_282/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_410/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_388/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_78/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_200/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_13/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_291/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_121/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_340/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_243/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_83/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_9/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_7/q_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'DFF_162/q_reg' is a constant and will be removed. (OPT-1206)
+Information: Removing unused design 'dff_527'. (OPT-1055)
+Information: Removing unused design 'dff_525'. (OPT-1055)
+Information: Removing unused design 'dff_521'. (OPT-1055)
+Information: Removing unused design 'dff_513'. (OPT-1055)
+Information: Removing unused design 'dff_511'. (OPT-1055)
+Information: Removing unused design 'dff_509'. (OPT-1055)
+Information: Removing unused design 'dff_503'. (OPT-1055)
+Information: Removing unused design 'dff_485'. (OPT-1055)
+Information: Removing unused design 'dff_471'. (OPT-1055)
+Information: Removing unused design 'dff_463'. (OPT-1055)
+Information: Removing unused design 'dff_460'. (OPT-1055)
+Information: Removing unused design 'dff_456'. (OPT-1055)
+Information: Removing unused design 'dff_451'. (OPT-1055)
+Information: Removing unused design 'dff_443'. (OPT-1055)
+Information: Removing unused design 'dff_413'. (OPT-1055)
+Information: Removing unused design 'dff_408'. (OPT-1055)
+Information: Removing unused design 'dff_403'. (OPT-1055)
+Information: Removing unused design 'dff_389'. (OPT-1055)
+Information: Removing unused design 'dff_376'. (OPT-1055)
+Information: Removing unused design 'dff_372'. (OPT-1055)
+Information: Removing unused design 'dff_334'. (OPT-1055)
+Information: Removing unused design 'dff_320'. (OPT-1055)
+Information: Removing unused design 'dff_310'. (OPT-1055)
+Information: Removing unused design 'dff_302'. (OPT-1055)
+Information: Removing unused design 'dff_294'. (OPT-1055)
+Information: Removing unused design 'dff_293'. (OPT-1055)
+Information: Removing unused design 'dff_291'. (OPT-1055)
+Information: Removing unused design 'dff_262'. (OPT-1055)
+Information: Removing unused design 'dff_256'. (OPT-1055)
+Information: Removing unused design 'dff_252'. (OPT-1055)
+Information: Removing unused design 'dff_243'. (OPT-1055)
+Information: Removing unused design 'dff_214'. (OPT-1055)
+Information: Removing unused design 'dff_211'. (OPT-1055)
+Information: Removing unused design 'dff_194'. (OPT-1055)
+Information: Removing unused design 'dff_181'. (OPT-1055)
+Information: Removing unused design 'dff_171'. (OPT-1055)
+Information: Removing unused design 'dff_168'. (OPT-1055)
+Information: Removing unused design 'dff_151'. (OPT-1055)
+Information: Removing unused design 'dff_146'. (OPT-1055)
+Information: Removing unused design 'dff_135'. (OPT-1055)
+Information: Removing unused design 'dff_124'. (OPT-1055)
+Information: Removing unused design 'dff_118'. (OPT-1055)
+Information: Removing unused design 'dff_117'. (OPT-1055)
+Information: Removing unused design 'dff_113'. (OPT-1055)
+Information: Removing unused design 'dff_99'. (OPT-1055)
+Information: Removing unused design 'dff_98'. (OPT-1055)
+Information: Removing unused design 'dff_96'. (OPT-1055)
+Information: Removing unused design 'dff_77'. (OPT-1055)
+Information: Removing unused design 'dff_66'. (OPT-1055)
+Information: Removing unused design 'dff_62'. (OPT-1055)
+Information: Removing unused design 'dff_33'. (OPT-1055)
+Information: Removing unused design 'dff_27'. (OPT-1055)
+Information: Removing unused design 'dff_21'. (OPT-1055)
+Information: Removing unused design 'dff_17'. (OPT-1055)
+Information: Removing unused design 'dff_9'. (OPT-1055)
+Information: Removing unused design 'dff_8'. (OPT-1055)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:13   24821.0      0.87      36.0       0.0                           112431600.0000
+    0:00:13   24821.0      0.87      36.0       0.0                           112431600.0000
+    0:00:13   24821.0      0.87      36.0       0.0                           112431600.0000
+    0:00:13   24817.3      0.86      35.2       0.0                           112394088.0000
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:17   24529.4      0.30       7.9       0.0                           108509728.0000
+    0:00:17   24529.4      0.30       7.9       0.0                           108509728.0000
+    0:00:17   24567.2      0.30      10.5       0.0                           109144328.0000
+    0:00:17   24567.2      0.30      10.5       0.0                           109144328.0000
+    0:00:18   24567.2      0.30      10.5       0.0                           109144328.0000
+    0:00:18   24567.2      0.30      10.5       0.0                           109144328.0000
+    0:00:18   24567.2      0.30      10.5       0.0                           109144328.0000
+    0:00:18   24567.2      0.30      10.5       0.0                           109144328.0000
+    0:00:18   24567.2      0.30      10.5       0.0                           109144328.0000
+    0:00:18   24567.2      0.30      10.5       0.0                           109144328.0000
+    0:00:19   24676.1      0.25       8.6       0.0                           109575096.0000
+    0:00:19   24676.1      0.25       8.6       0.0                           109575096.0000
+    0:00:20   24676.1      0.25       8.6       0.0                           109575096.0000
+
+Threshold voltage group cell usage:
+>> saed90cell 100.00%
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:20   24788.3      0.22       7.7       0.0                           109864344.0000
+    0:00:21   24796.6      0.22       7.5       0.0                           109957176.0000
+    0:00:21   24796.6      0.22       7.5       0.0                           109957176.0000
+    0:00:21   24796.6      0.22       7.5       0.0                           109957176.0000
+    0:00:21   24796.6      0.22       7.5       0.0                           109957176.0000
+    0:00:21   24796.6      0.22       7.5       0.0                           109957176.0000
+    0:00:21   24796.6      0.22       7.5       0.0                           109957176.0000
+    0:00:22   24796.6      0.22       7.5       0.0                           109957176.0000
+    0:00:24   24945.2      0.19       5.3       0.0                           110892160.0000
+    0:00:25   25220.3      0.14       3.5       0.0                           111800880.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:25   25220.3      0.14       3.5       0.0                           111800880.0000
+    0:00:26   25228.7      0.14       3.5       0.0                           112158704.0000
+
+Threshold voltage group cell usage:
+>> saed90cell 100.00%
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:26   25226.0      0.14       3.2       0.0                           112150792.0000
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+    0:00:29   23325.7      0.00       0.0       0.0                           110680696.0000
+Information: Complementing port 'q' in design 'dff_319'.
+	 The new name of the port is 'q_BAR'. (OPT-319)
+Information: Complementing port 'q' in design 'dff_285'.
+	 The new name of the port is 'q_BAR'. (OPT-319)
+Information: Complementing port 'q' in design 'dff_160'.
+	 The new name of the port is 'q_BAR'. (OPT-319)
+Information: Complementing port 'q' in design 'dff_134'.
+	 The new name of the port is 'q_BAR'. (OPT-319)
+Information: Complementing port 'q' in design 'dff_52'.
+	 The new name of the port is 'q_BAR'. (OPT-319)
+Information: Complementing port 'q' in design 'dff_16'.
+	 The new name of the port is 'q_BAR'. (OPT-319)
+Information: Complementing port 'd' in design 'dff_512'.
+	 The new name of the port is 'd_BAR'. (OPT-319)
+Information: Complementing port 'd' in design 'dff_306'.
+	 The new name of the port is 'd_BAR'. (OPT-319)
+Information: Complementing port 'd' in design 'dff_184'.
+	 The new name of the port is 'd_BAR'. (OPT-319)
+    0:00:30   25019.1      0.00       0.0       0.0                           110653592.0000
+    0:00:30   25019.1      0.00       0.0       0.0                           110653592.0000
+    0:00:30   25019.1      0.00       0.0       0.0                           110653592.0000
+    0:00:31   24976.7      0.00       0.0       0.0                           109887024.0000
+    0:00:31   24976.7      0.00       0.0       0.0                           109887024.0000
+    0:00:31   24976.7      0.00       0.0       0.0                           109887024.0000
+    0:00:31   24976.7      0.00       0.0       0.0                           109887024.0000
+    0:00:31   24976.7      0.00       0.0       0.0                           109887024.0000
+    0:00:31   24976.7      0.00       0.0       0.0                           109887024.0000
+    0:00:32   24976.7      0.00       0.0       0.0                           109887024.0000
+    0:00:32   24976.7      0.00       0.0       0.0                           109887024.0000
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:32   24983.3      0.00       0.0       0.0                           109965728.0000
+    0:00:33   24873.1      0.00       0.0       0.0                           109378400.0000
+    0:00:33   24863.6      0.00       0.0       0.0                           109378048.0000
+    0:00:33   24863.6      0.00       0.0       0.0                           109378048.0000
+    0:00:33   24863.6      0.00       0.0       0.0                           109378048.0000
+    0:00:33   24776.8      0.00       0.0       0.0                           108898120.0000
+    0:00:33   24777.7      0.00       0.0       0.0                           108955960.0000
+    0:00:33   24767.6      0.00       0.0       0.0                           108786632.0000
+Loading db file '/mnt/class_data/ecec574-f2016/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#Reports for different constraints 
+report_wire_load > logs/s15850/wire.report
+report_design > logs/s15850/op.report
+report_timing > logs/s15850/timing.report
+report_power  > logs/s15850/power.report 
+report_clock  > logs/s15850/clk_def.report
+report_clock_timing -type transition -clock CK  > logs/s15850/transition_clock.report
+report_clock_timing -type skew -clock CK  > logs/s15850/skew_clock.report
+report_clock_timing -type latency -clock CK  > logs/s15850/latency_clock.report
+quit
+
+Thank you...

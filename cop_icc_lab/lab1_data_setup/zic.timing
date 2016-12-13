@@ -1,0 +1,44 @@
+Warning: Timer is in zero interconnect delay mode. (TIM-177)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : s15850
+Version: J-2014.09-SP5
+Date   : Thu Nov 17 17:10:51 2016
+****************************************
+
+ z Timer is in zero interconnect delay mode.
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ
+Wire Load Model Mode: enclosed
+
+  Startpoint: DFF_53/q_reg
+              (rising edge-triggered flip-flop)
+  Endpoint: g10628 (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  DFF_53/q_reg/CLK (DFFX1)                 0.00       0.00 r
+  DFF_53/q_reg/Q (DFFX1)                   0.17 z     0.17 f
+  DFF_53/q (dff_480)                       0.00 z     0.17 f
+  NAND2_779/Z (GTECH_AND2)                 0.00 z     0.17 f
+  I_2081/Z (GTECH_NOT)                     0.00 z     0.17 r
+  I_2447/Z (GTECH_NOT)                     0.00 z     0.17 f
+  NOR2_80/Z (GTECH_AND2)                   0.00 z     0.17 f
+  NAND2_486/Z (GTECH_AND2)                 0.00 z     0.17 f
+  I_1770/Z (GTECH_NOT)                     0.00 z     0.17 r
+  AND3_10/Z (GTECH_AND3)                   0.00 z     0.17 r
+  AND3_11/Z (GTECH_AND3)                   0.00 z     0.17 r
+  g10628 (out)                             0.00 z     0.17 r
+  data arrival time                                   0.17
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

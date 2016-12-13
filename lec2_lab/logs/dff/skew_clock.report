@@ -1,0 +1,16 @@
+ 
+****************************************
+Report : clock timing
+        -type skew
+        -nworst 1
+        -setup
+Design : dff
+Version: J-2014.09-SP5
+Date   : Thu Nov 24 11:03:50 2016
+****************************************
+
+  Clock: clk
+  No local skews.
+
+
+1

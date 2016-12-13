@@ -1,0 +1,42 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : wire loads
+Design : dff
+Version: J-2014.09-SP5
+Date   : Thu Nov 24 11:03:50 2016
+****************************************
+
+Wire load model:   ForQA
+Location       :   dff (design)
+Resistance     :   0.002067
+Capacitance    :   0.026724
+Area           :   0.01
+Slope          :   30.2854
+
+                             Average   Standard  % Standard
+Fanout   Length   Points         Cap  Deviation   Deviation
+--------------------------------------------------------------
+     1     8.28                                    
+     2    18.49                                    
+     3    29.35                                    
+     4    40.92                                    
+     5    53.23                                    
+     6    66.36                                    
+     7    80.36                                    
+     8    95.27                                    
+     9   111.17                                    
+    10   128.09                                    
+    11   146.10                                    
+    12   165.26                                    
+    13   185.61                                    
+    14   207.22                                    
+    15   230.13                                    
+    16   254.41                                    
+    17   280.11                                    
+    18   307.28                                    
+    19   335.98                                    
+    20   366.27                                    
+--------------------------------------------------------------
+
+1

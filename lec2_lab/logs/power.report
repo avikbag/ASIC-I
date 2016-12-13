@@ -1,0 +1,504 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : s15850
+Version: J-2014.09-SP5
+Date   : Mon Oct 10 18:33:17 2016
+****************************************
+
+
+Library(s) Used:
+
+    saed90nm_typ (File: /mnt/class_data/ecec574-f2016/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db)
+
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+s15850                 35000             saed90nm_typ
+dff_533                ForQA             saed90nm_typ
+dff_532                ForQA             saed90nm_typ
+dff_531                ForQA             saed90nm_typ
+dff_530                ForQA             saed90nm_typ
+dff_529                ForQA             saed90nm_typ
+dff_528                ForQA             saed90nm_typ
+dff_524                ForQA             saed90nm_typ
+dff_523                ForQA             saed90nm_typ
+dff_522                ForQA             saed90nm_typ
+dff_520                ForQA             saed90nm_typ
+dff_519                ForQA             saed90nm_typ
+dff_518                ForQA             saed90nm_typ
+dff_517                ForQA             saed90nm_typ
+dff_516                ForQA             saed90nm_typ
+dff_515                ForQA             saed90nm_typ
+dff_514                ForQA             saed90nm_typ
+dff_512                ForQA             saed90nm_typ
+dff_510                ForQA             saed90nm_typ
+dff_508                ForQA             saed90nm_typ
+dff_507                ForQA             saed90nm_typ
+dff_506                ForQA             saed90nm_typ
+dff_505                ForQA             saed90nm_typ
+dff_504                ForQA             saed90nm_typ
+dff_502                ForQA             saed90nm_typ
+dff_501                ForQA             saed90nm_typ
+dff_500                ForQA             saed90nm_typ
+dff_498                ForQA             saed90nm_typ
+dff_497                ForQA             saed90nm_typ
+dff_496                ForQA             saed90nm_typ
+dff_495                ForQA             saed90nm_typ
+dff_493                ForQA             saed90nm_typ
+dff_492                ForQA             saed90nm_typ
+dff_491                ForQA             saed90nm_typ
+dff_490                ForQA             saed90nm_typ
+dff_489                ForQA             saed90nm_typ
+dff_488                ForQA             saed90nm_typ
+dff_487                ForQA             saed90nm_typ
+dff_486                ForQA             saed90nm_typ
+dff_484                ForQA             saed90nm_typ
+dff_483                ForQA             saed90nm_typ
+dff_482                ForQA             saed90nm_typ
+dff_481                ForQA             saed90nm_typ
+dff_480                ForQA             saed90nm_typ
+dff_479                ForQA             saed90nm_typ
+dff_478                ForQA             saed90nm_typ
+dff_477                ForQA             saed90nm_typ
+dff_476                ForQA             saed90nm_typ
+dff_475                ForQA             saed90nm_typ
+dff_474                ForQA             saed90nm_typ
+dff_473                ForQA             saed90nm_typ
+dff_472                ForQA             saed90nm_typ
+dff_470                ForQA             saed90nm_typ
+dff_469                ForQA             saed90nm_typ
+dff_468                ForQA             saed90nm_typ
+dff_467                ForQA             saed90nm_typ
+dff_466                ForQA             saed90nm_typ
+dff_465                ForQA             saed90nm_typ
+dff_464                ForQA             saed90nm_typ
+dff_462                ForQA             saed90nm_typ
+dff_461                ForQA             saed90nm_typ
+dff_459                ForQA             saed90nm_typ
+dff_458                ForQA             saed90nm_typ
+dff_457                ForQA             saed90nm_typ
+dff_455                ForQA             saed90nm_typ
+dff_454                ForQA             saed90nm_typ
+dff_453                ForQA             saed90nm_typ
+dff_452                ForQA             saed90nm_typ
+dff_449                ForQA             saed90nm_typ
+dff_448                ForQA             saed90nm_typ
+dff_447                ForQA             saed90nm_typ
+dff_446                ForQA             saed90nm_typ
+dff_445                ForQA             saed90nm_typ
+dff_444                ForQA             saed90nm_typ
+dff_442                ForQA             saed90nm_typ
+dff_441                ForQA             saed90nm_typ
+dff_440                ForQA             saed90nm_typ
+dff_439                ForQA             saed90nm_typ
+dff_438                ForQA             saed90nm_typ
+dff_437                ForQA             saed90nm_typ
+dff_436                ForQA             saed90nm_typ
+dff_435                ForQA             saed90nm_typ
+dff_434                ForQA             saed90nm_typ
+dff_433                ForQA             saed90nm_typ
+dff_432                ForQA             saed90nm_typ
+dff_431                ForQA             saed90nm_typ
+dff_430                ForQA             saed90nm_typ
+dff_429                ForQA             saed90nm_typ
+dff_428                ForQA             saed90nm_typ
+dff_426                ForQA             saed90nm_typ
+dff_425                ForQA             saed90nm_typ
+dff_423                ForQA             saed90nm_typ
+dff_422                ForQA             saed90nm_typ
+dff_421                ForQA             saed90nm_typ
+dff_420                ForQA             saed90nm_typ
+dff_419                ForQA             saed90nm_typ
+dff_418                ForQA             saed90nm_typ
+dff_417                ForQA             saed90nm_typ
+dff_416                ForQA             saed90nm_typ
+dff_415                ForQA             saed90nm_typ
+dff_414                ForQA             saed90nm_typ
+dff_412                ForQA             saed90nm_typ
+dff_411                ForQA             saed90nm_typ
+dff_410                ForQA             saed90nm_typ
+dff_409                ForQA             saed90nm_typ
+dff_407                ForQA             saed90nm_typ
+dff_406                ForQA             saed90nm_typ
+dff_405                ForQA             saed90nm_typ
+dff_404                ForQA             saed90nm_typ
+dff_402                ForQA             saed90nm_typ
+dff_401                ForQA             saed90nm_typ
+dff_400                ForQA             saed90nm_typ
+dff_399                ForQA             saed90nm_typ
+dff_398                ForQA             saed90nm_typ
+dff_397                ForQA             saed90nm_typ
+dff_396                ForQA             saed90nm_typ
+dff_395                ForQA             saed90nm_typ
+dff_394                ForQA             saed90nm_typ
+dff_393                ForQA             saed90nm_typ
+dff_392                ForQA             saed90nm_typ
+dff_391                ForQA             saed90nm_typ
+dff_388                ForQA             saed90nm_typ
+dff_387                ForQA             saed90nm_typ
+dff_386                ForQA             saed90nm_typ
+dff_385                ForQA             saed90nm_typ
+dff_384                ForQA             saed90nm_typ
+dff_383                ForQA             saed90nm_typ
+dff_382                ForQA             saed90nm_typ
+dff_381                ForQA             saed90nm_typ
+dff_380                ForQA             saed90nm_typ
+dff_379                ForQA             saed90nm_typ
+dff_378                ForQA             saed90nm_typ
+dff_377                ForQA             saed90nm_typ
+dff_375                ForQA             saed90nm_typ
+dff_373                ForQA             saed90nm_typ
+dff_371                ForQA             saed90nm_typ
+dff_370                ForQA             saed90nm_typ
+dff_369                ForQA             saed90nm_typ
+dff_368                ForQA             saed90nm_typ
+dff_367                ForQA             saed90nm_typ
+dff_366                ForQA             saed90nm_typ
+dff_365                ForQA             saed90nm_typ
+dff_364                ForQA             saed90nm_typ
+dff_363                ForQA             saed90nm_typ
+dff_362                ForQA             saed90nm_typ
+dff_361                ForQA             saed90nm_typ
+dff_360                ForQA             saed90nm_typ
+dff_359                ForQA             saed90nm_typ
+dff_358                ForQA             saed90nm_typ
+dff_357                ForQA             saed90nm_typ
+dff_356                ForQA             saed90nm_typ
+dff_355                ForQA             saed90nm_typ
+dff_354                ForQA             saed90nm_typ
+dff_353                ForQA             saed90nm_typ
+dff_352                ForQA             saed90nm_typ
+dff_351                ForQA             saed90nm_typ
+dff_350                ForQA             saed90nm_typ
+dff_349                ForQA             saed90nm_typ
+dff_348                ForQA             saed90nm_typ
+dff_347                ForQA             saed90nm_typ
+dff_346                ForQA             saed90nm_typ
+dff_345                ForQA             saed90nm_typ
+dff_344                ForQA             saed90nm_typ
+dff_343                ForQA             saed90nm_typ
+dff_342                ForQA             saed90nm_typ
+dff_341                ForQA             saed90nm_typ
+dff_340                ForQA             saed90nm_typ
+dff_339                ForQA             saed90nm_typ
+dff_338                ForQA             saed90nm_typ
+dff_337                ForQA             saed90nm_typ
+dff_336                ForQA             saed90nm_typ
+dff_335                ForQA             saed90nm_typ
+dff_333                ForQA             saed90nm_typ
+dff_332                ForQA             saed90nm_typ
+dff_331                ForQA             saed90nm_typ
+dff_330                ForQA             saed90nm_typ
+dff_329                ForQA             saed90nm_typ
+dff_328                ForQA             saed90nm_typ
+dff_327                ForQA             saed90nm_typ
+dff_326                ForQA             saed90nm_typ
+dff_325                ForQA             saed90nm_typ
+dff_324                ForQA             saed90nm_typ
+dff_323                ForQA             saed90nm_typ
+dff_322                ForQA             saed90nm_typ
+dff_319                ForQA             saed90nm_typ
+dff_318                ForQA             saed90nm_typ
+dff_317                ForQA             saed90nm_typ
+dff_316                ForQA             saed90nm_typ
+dff_314                ForQA             saed90nm_typ
+dff_313                ForQA             saed90nm_typ
+dff_312                ForQA             saed90nm_typ
+dff_311                ForQA             saed90nm_typ
+dff_309                ForQA             saed90nm_typ
+dff_308                ForQA             saed90nm_typ
+dff_307                ForQA             saed90nm_typ
+dff_306                ForQA             saed90nm_typ
+dff_305                ForQA             saed90nm_typ
+dff_304                ForQA             saed90nm_typ
+dff_303                ForQA             saed90nm_typ
+dff_301                ForQA             saed90nm_typ
+dff_300                ForQA             saed90nm_typ
+dff_299                ForQA             saed90nm_typ
+dff_297                ForQA             saed90nm_typ
+dff_296                ForQA             saed90nm_typ
+dff_295                ForQA             saed90nm_typ
+dff_292                ForQA             saed90nm_typ
+dff_290                ForQA             saed90nm_typ
+dff_289                ForQA             saed90nm_typ
+dff_288                ForQA             saed90nm_typ
+dff_287                ForQA             saed90nm_typ
+dff_286                ForQA             saed90nm_typ
+dff_285                ForQA             saed90nm_typ
+dff_284                ForQA             saed90nm_typ
+dff_283                ForQA             saed90nm_typ
+dff_282                ForQA             saed90nm_typ
+dff_281                ForQA             saed90nm_typ
+dff_280                ForQA             saed90nm_typ
+dff_279                ForQA             saed90nm_typ
+dff_278                ForQA             saed90nm_typ
+dff_276                ForQA             saed90nm_typ
+dff_275                ForQA             saed90nm_typ
+dff_274                ForQA             saed90nm_typ
+dff_273                ForQA             saed90nm_typ
+dff_272                ForQA             saed90nm_typ
+dff_271                ForQA             saed90nm_typ
+dff_270                ForQA             saed90nm_typ
+dff_269                ForQA             saed90nm_typ
+dff_268                ForQA             saed90nm_typ
+dff_267                ForQA             saed90nm_typ
+dff_266                ForQA             saed90nm_typ
+dff_265                ForQA             saed90nm_typ
+dff_264                ForQA             saed90nm_typ
+dff_263                ForQA             saed90nm_typ
+dff_261                ForQA             saed90nm_typ
+dff_259                ForQA             saed90nm_typ
+dff_258                ForQA             saed90nm_typ
+dff_257                ForQA             saed90nm_typ
+dff_255                ForQA             saed90nm_typ
+dff_254                ForQA             saed90nm_typ
+dff_253                ForQA             saed90nm_typ
+dff_251                ForQA             saed90nm_typ
+dff_250                ForQA             saed90nm_typ
+dff_249                ForQA             saed90nm_typ
+dff_248                ForQA             saed90nm_typ
+dff_246                ForQA             saed90nm_typ
+dff_245                ForQA             saed90nm_typ
+dff_244                ForQA             saed90nm_typ
+dff_242                ForQA             saed90nm_typ
+dff_241                ForQA             saed90nm_typ
+dff_240                ForQA             saed90nm_typ
+dff_239                ForQA             saed90nm_typ
+dff_238                ForQA             saed90nm_typ
+dff_237                ForQA             saed90nm_typ
+dff_235                ForQA             saed90nm_typ
+dff_234                ForQA             saed90nm_typ
+dff_233                ForQA             saed90nm_typ
+dff_232                ForQA             saed90nm_typ
+dff_231                ForQA             saed90nm_typ
+dff_230                ForQA             saed90nm_typ
+dff_228                ForQA             saed90nm_typ
+dff_227                ForQA             saed90nm_typ
+dff_226                ForQA             saed90nm_typ
+dff_225                ForQA             saed90nm_typ
+dff_224                ForQA             saed90nm_typ
+dff_223                ForQA             saed90nm_typ
+dff_222                ForQA             saed90nm_typ
+dff_221                ForQA             saed90nm_typ
+dff_220                ForQA             saed90nm_typ
+dff_219                ForQA             saed90nm_typ
+dff_218                ForQA             saed90nm_typ
+dff_217                ForQA             saed90nm_typ
+dff_216                ForQA             saed90nm_typ
+dff_215                ForQA             saed90nm_typ
+dff_213                ForQA             saed90nm_typ
+dff_212                ForQA             saed90nm_typ
+dff_210                ForQA             saed90nm_typ
+dff_209                ForQA             saed90nm_typ
+dff_208                ForQA             saed90nm_typ
+dff_207                ForQA             saed90nm_typ
+dff_206                ForQA             saed90nm_typ
+dff_205                ForQA             saed90nm_typ
+dff_204                ForQA             saed90nm_typ
+dff_203                ForQA             saed90nm_typ
+dff_202                ForQA             saed90nm_typ
+dff_201                ForQA             saed90nm_typ
+dff_200                ForQA             saed90nm_typ
+dff_199                ForQA             saed90nm_typ
+dff_198                ForQA             saed90nm_typ
+dff_197                ForQA             saed90nm_typ
+dff_196                ForQA             saed90nm_typ
+dff_195                ForQA             saed90nm_typ
+dff_192                ForQA             saed90nm_typ
+dff_191                ForQA             saed90nm_typ
+dff_190                ForQA             saed90nm_typ
+dff_189                ForQA             saed90nm_typ
+dff_188                ForQA             saed90nm_typ
+dff_187                ForQA             saed90nm_typ
+dff_185                ForQA             saed90nm_typ
+dff_184                ForQA             saed90nm_typ
+dff_183                ForQA             saed90nm_typ
+dff_182                ForQA             saed90nm_typ
+dff_180                ForQA             saed90nm_typ
+dff_179                ForQA             saed90nm_typ
+dff_178                ForQA             saed90nm_typ
+dff_177                ForQA             saed90nm_typ
+dff_176                ForQA             saed90nm_typ
+dff_175                ForQA             saed90nm_typ
+dff_174                ForQA             saed90nm_typ
+dff_173                ForQA             saed90nm_typ
+dff_172                ForQA             saed90nm_typ
+dff_170                ForQA             saed90nm_typ
+dff_169                ForQA             saed90nm_typ
+dff_167                ForQA             saed90nm_typ
+dff_166                ForQA             saed90nm_typ
+dff_165                ForQA             saed90nm_typ
+dff_164                ForQA             saed90nm_typ
+dff_163                ForQA             saed90nm_typ
+dff_162                ForQA             saed90nm_typ
+dff_161                ForQA             saed90nm_typ
+dff_160                ForQA             saed90nm_typ
+dff_158                ForQA             saed90nm_typ
+dff_157                ForQA             saed90nm_typ
+dff_156                ForQA             saed90nm_typ
+dff_155                ForQA             saed90nm_typ
+dff_154                ForQA             saed90nm_typ
+dff_153                ForQA             saed90nm_typ
+dff_152                ForQA             saed90nm_typ
+dff_150                ForQA             saed90nm_typ
+dff_149                ForQA             saed90nm_typ
+dff_148                ForQA             saed90nm_typ
+dff_147                ForQA             saed90nm_typ
+dff_145                ForQA             saed90nm_typ
+dff_144                ForQA             saed90nm_typ
+dff_143                ForQA             saed90nm_typ
+dff_142                ForQA             saed90nm_typ
+dff_141                ForQA             saed90nm_typ
+dff_140                ForQA             saed90nm_typ
+dff_139                ForQA             saed90nm_typ
+dff_138                ForQA             saed90nm_typ
+dff_137                ForQA             saed90nm_typ
+dff_136                ForQA             saed90nm_typ
+dff_134                ForQA             saed90nm_typ
+dff_133                ForQA             saed90nm_typ
+dff_132                ForQA             saed90nm_typ
+dff_131                ForQA             saed90nm_typ
+dff_130                ForQA             saed90nm_typ
+dff_129                ForQA             saed90nm_typ
+dff_128                ForQA             saed90nm_typ
+dff_127                ForQA             saed90nm_typ
+dff_126                ForQA             saed90nm_typ
+dff_125                ForQA             saed90nm_typ
+dff_123                ForQA             saed90nm_typ
+dff_122                ForQA             saed90nm_typ
+dff_121                ForQA             saed90nm_typ
+dff_120                ForQA             saed90nm_typ
+dff_119                ForQA             saed90nm_typ
+dff_116                ForQA             saed90nm_typ
+dff_115                ForQA             saed90nm_typ
+dff_114                ForQA             saed90nm_typ
+dff_111                ForQA             saed90nm_typ
+dff_110                ForQA             saed90nm_typ
+dff_109                ForQA             saed90nm_typ
+dff_108                ForQA             saed90nm_typ
+dff_107                ForQA             saed90nm_typ
+dff_106                ForQA             saed90nm_typ
+dff_105                ForQA             saed90nm_typ
+dff_104                ForQA             saed90nm_typ
+dff_103                ForQA             saed90nm_typ
+dff_102                ForQA             saed90nm_typ
+dff_101                ForQA             saed90nm_typ
+dff_100                ForQA             saed90nm_typ
+dff_97                 ForQA             saed90nm_typ
+dff_94                 ForQA             saed90nm_typ
+dff_93                 ForQA             saed90nm_typ
+dff_92                 ForQA             saed90nm_typ
+dff_91                 ForQA             saed90nm_typ
+dff_90                 ForQA             saed90nm_typ
+dff_89                 ForQA             saed90nm_typ
+dff_88                 ForQA             saed90nm_typ
+dff_87                 ForQA             saed90nm_typ
+dff_86                 ForQA             saed90nm_typ
+dff_85                 ForQA             saed90nm_typ
+dff_84                 ForQA             saed90nm_typ
+dff_83                 ForQA             saed90nm_typ
+dff_82                 ForQA             saed90nm_typ
+dff_81                 ForQA             saed90nm_typ
+dff_80                 ForQA             saed90nm_typ
+dff_79                 ForQA             saed90nm_typ
+dff_78                 ForQA             saed90nm_typ
+dff_76                 ForQA             saed90nm_typ
+dff_75                 ForQA             saed90nm_typ
+dff_74                 ForQA             saed90nm_typ
+dff_73                 ForQA             saed90nm_typ
+dff_72                 ForQA             saed90nm_typ
+dff_71                 ForQA             saed90nm_typ
+dff_70                 ForQA             saed90nm_typ
+dff_69                 ForQA             saed90nm_typ
+dff_68                 ForQA             saed90nm_typ
+dff_67                 ForQA             saed90nm_typ
+dff_64                 ForQA             saed90nm_typ
+dff_63                 ForQA             saed90nm_typ
+dff_61                 ForQA             saed90nm_typ
+dff_60                 ForQA             saed90nm_typ
+dff_59                 ForQA             saed90nm_typ
+dff_58                 ForQA             saed90nm_typ
+dff_57                 ForQA             saed90nm_typ
+dff_56                 ForQA             saed90nm_typ
+dff_54                 ForQA             saed90nm_typ
+dff_53                 ForQA             saed90nm_typ
+dff_52                 ForQA             saed90nm_typ
+dff_51                 ForQA             saed90nm_typ
+dff_50                 ForQA             saed90nm_typ
+dff_49                 ForQA             saed90nm_typ
+dff_48                 ForQA             saed90nm_typ
+dff_47                 ForQA             saed90nm_typ
+dff_46                 ForQA             saed90nm_typ
+dff_45                 ForQA             saed90nm_typ
+dff_44                 ForQA             saed90nm_typ
+dff_43                 ForQA             saed90nm_typ
+dff_42                 ForQA             saed90nm_typ
+dff_41                 ForQA             saed90nm_typ
+dff_40                 ForQA             saed90nm_typ
+dff_39                 ForQA             saed90nm_typ
+dff_37                 ForQA             saed90nm_typ
+dff_36                 ForQA             saed90nm_typ
+dff_35                 ForQA             saed90nm_typ
+dff_34                 ForQA             saed90nm_typ
+dff_32                 ForQA             saed90nm_typ
+dff_31                 ForQA             saed90nm_typ
+dff_30                 ForQA             saed90nm_typ
+dff_29                 ForQA             saed90nm_typ
+dff_28                 ForQA             saed90nm_typ
+dff_26                 ForQA             saed90nm_typ
+dff_25                 ForQA             saed90nm_typ
+dff_24                 ForQA             saed90nm_typ
+dff_23                 ForQA             saed90nm_typ
+dff_22                 ForQA             saed90nm_typ
+dff_20                 ForQA             saed90nm_typ
+dff_19                 ForQA             saed90nm_typ
+dff_18                 ForQA             saed90nm_typ
+dff_16                 ForQA             saed90nm_typ
+dff_15                 ForQA             saed90nm_typ
+dff_14                 ForQA             saed90nm_typ
+dff_13                 ForQA             saed90nm_typ
+dff_12                 ForQA             saed90nm_typ
+dff_11                 ForQA             saed90nm_typ
+dff_10                 ForQA             saed90nm_typ
+dff_6                  ForQA             saed90nm_typ
+dff_5                  ForQA             saed90nm_typ
+dff_4                  ForQA             saed90nm_typ
+dff_3                  ForQA             saed90nm_typ
+dff_2                  ForQA             saed90nm_typ
+
+
+Global Operating Voltage = 1.2  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  = 769.7216 uW   (79%)
+  Net Switching Power  = 199.0145 uW   (21%)
+                         ---------
+Total Dynamic Power    = 968.7361 uW  (100%)
+
+Cell Leakage Power     = 107.5207 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register         343.4945           72.8815        5.8300e+07          474.6758  (  44.10%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    426.2268          126.1329        4.9221e+07          601.5810  (  55.90%)
+--------------------------------------------------------------------------------------------------
+Total            769.7213 uW       199.0145 uW     1.0752e+08 pW     1.0763e+03 uW
+1

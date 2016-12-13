@@ -1,0 +1,8 @@
+#@ # 
+#@ # Running icc_shell Version J-2014.09-SP5 for amd64 -- Apr 14, 2015
+#@ # Date:   Wed Nov 30 14:03:52 2016
+#@ # Run by: ab3433@xunil-03.coe.drexel.edu
+#@ 
+
+source -echo -verbose /home/DREXEL/ab3433/ecec474/iccProject/report/scripts/run.tcl
+exit

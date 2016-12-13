@@ -1,0 +1,20 @@
+
+Name of design : s15850
+Number of cell instance masters in the library : 39
+Number of cell instances in the design : 1912
+Processing net VDD ...
+Average power dissipation in s15850 :  1000.00 mW
+Power supply voltage :     1.80 V
+Average current in s15850 :   555.56 mA
+Number of power pad nodes reaching to the power ports of the leaf cells or blocks : 108
+Maximum IR drop in s15850 : 33.14 mV
+Maximum current in s15850 : 12.106 mA
+Processing net VSS ...
+Average power dissipation in s15850 :  1000.00 mW
+Power supply voltage :     1.80 V
+Average current in s15850 :   555.56 mA
+Number of power pad nodes reaching to the power ports of the leaf cells or blocks : 108
+Maximum IR drop in s15850 : 32.54 mV
+Maximum current in s15850 : 11.949 mA
+Memory usage for design data :      37355.520 Kbytes
+Overall takes     0.82 seconds

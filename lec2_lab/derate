@@ -1,0 +1,155 @@
+2.  Synopsys Commands                                        Command Reference
+                               set_timing_derate
+
+NAME
+       set_timing_derate
+              Sets  a  derating  factor  on  the  current  design or specified
+              objects.  Derating  factors  adjust  the  worst-case  calculated
+              delays for a particular operating condition.
+
+SYNTAX
+       status set_timing_derate
+               [-rise]
+               [-fall]
+               [-min]
+               [-max]
+               [-early]
+               [-late]
+               [-clock]
+               [-data]
+               [-net_delay]
+               [-cell_delay]
+               [-cell_check]
+               value
+               object_list
+
+   Data Types
+       value           float
+       object_list     list
+
+ARGUMENTS
+       -rise  Applies the derating value only to the delays of paths that have
+              a rising transition at the specified objects.
+
+       -fall  Applies the derating value only to the delays of paths that have
+              a falling transition at the specified objects.
+
+              If  neither  the  -rise nor -fall option is used in the command,
+              the derating value applies to both rise and fall.
+
+       -min   Applies the derating value only to the minimum operating  condi-
+              tion.
+
+       -max   Applies  the derating value only to the maximum operating condi-
+              tion.
+
+              If neither the -min nor -max option is used in the command,  the
+              derating value applies to both operating conditions.
+
+       -early Applies  the  derating  factor  only  to  minimum  delays, which
+              defines how early a signal can arrive.  The  factor  applies  to
+              clock path delays in a setup check, and to data path delays in a
+              hold check.
+
+       -late  Applies the  derating  factor  only  to  maximum  delays,  which
+              defines how late a signal can arrive. The factor applies to data
+              path delays in a setup check, and to clock path delays in a hold
+              check.
+
+              If  neither  the -early nor -late option is used in the command,
+              the derating value applies to early and late delays.
+
+       -clock Applies the derating value only to elements in  the  clock  net-
+              work.
+
+       -data  Applies the derating value only to elements in the data network.
+
+              If neither the -clock nor -data option is used in  the  command,
+              the derating value applies to both clock paths and data paths.
+
+       -net_delay
+              Applies the derating value only to net delay, which is the delay
+              from the driver to the receiver of each net.  This option cannot
+              be  used with an object list.  There is only one set of derating
+              values for net delays and they apply to the whole design.
+
+       -cell_delay
+              Applies the derating value only to  cell  delay,  which  is  the
+              delay from the input to the output of a cell.
+
+       -cell_check
+              Applies  the  derating value to the setup and hold time require-
+              ments of cells: cell setup and cell recovery times for late der-
+              ating  or  cell  hold and cell removal times for early derating.
+              This option cannot be used together  with  the  -aocvm_guardband
+              option.
+
+       value  Specifies  the derating value, which must be in the range of 0.1
+              to 2.0.
+
+       object_list
+              Specifies the leaf cells, instances, or library cells  on  which
+              to  set  the  derating  factor. To ensure that the setting on an
+              instance is preserved during optimization,  the  tool  sets  the
+              size_only attribute of the instance to true.
+
+DESCRIPTION
+       The  set_timing_derate  command  sets  derating factors for the current
+       design or specified objects.  If a timing derating factor is specified,
+       some or all path delays are multiplied by the derating factor.
+
+       Derating factors define the lower and upper ranges of timing delays for
+       a certain operating condition.  The derating factor specified with  the
+       -late  option  is  multiplied by the data path delays for maximum delay
+       (setup) checking and clock path delays for minimum delay (hold)  check-
+       ing.   Conversely, the derating factor specified with the -early option
+       is multiplied by the data path delays for hold checking and clock  path
+       delays for setup checking.
+
+       The  -net_delay,  -cell_delay, and -cell_check options apply the speci-
+       fied derating value to net delays, cell delays, or cell setup and  hold
+       time requirements, respectively. The -net_delay option can apply to the
+       whole design only, so it cannot be used with an object list.
+
+       If none of these three options is used and an object list is  provided,
+       the  derating  value  applies  to cell delay only; if no object list is
+       provided, the value applies to both cell delay and net delay.
+
+       The setup timing check is calculated using the maximum operating condi-
+       tion.   The hold timing check is calculated using the minimum operating
+       condition.
+
+       Input delay and ideal clock network latency are not derated.
+
+   Multicorner-Multimode Support
+       This command applies to the current scenario only.   By  default,  when
+       you  set  timing  derating  factors  on  a library cell, the setting is
+       applied to all scenarios. You can control whether timing derating  fac-
+       tors   on   library   cells   are   scenario-specific  with  the   tim-
+       ing_library_derate_is_scenario_specific variable. If this  variable  is
+       true  when  you  set  the timing derating factor on a library cell, the
+       timing derating factors apply to the current scenario  only.  For  more
+       information,  see  the  man  page for the timing_library_derate_is_sce-
+       nario_specific variable.
+
+EXAMPLES
+       The following example specifies an early derating value of  0.9  and  a
+       late  derating  value  of 1.1 for all clock network nets at the maximum
+       operating condition.
+
+         prompt> set_timing_derate -max -early -net_delay 0.9
+         prompt> set_timing_derate -max -late -net_delay 1.1
+
+       The following example specifies an early derating value of  0.8  and  a
+       late  derating  value  of 1.2 for leaf cell U1 at the maximum operating
+       condition.
+
+         prompt> set_timing_derate -max -early 0.8 U1
+         prompt> set_timing_derate -max -late 1.2 U1
+
+SEE ALSO
+       report_timing_derate(2)
+       report_timing(2)
+
+                          Version J-2014.09-SP5
+            Copyright (c) 2015 Synopsys, Inc. All rights reserved.

@@ -1,0 +1,5 @@
+Error: could not open script file "/home/DREXEL/ab3433/ecec474/iccProject/report/scripts/run.tcl" (CMD-015)
+icc_shell> exit
+
+Thank you...
+
